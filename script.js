@@ -82,7 +82,7 @@ function makeBalloonFloat(balloon) {
     // Smooth floating animation using velocity and acceleration
     let velocityX = Math.random() * 2 - 1; // Random horizontal speed
     let velocityY = Math.random() * 2 - 1; // Random vertical speed
-    let acceleration = 0.001; // Acceleration (gravity-like effect)
+    let acceleration = 0.007; // Acceleration (gravity-like effect)
 
     function floatBalloon() {
         velocityY += acceleration; // Apply gravity-like effect
