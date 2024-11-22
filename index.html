@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #gameArea {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            /* Align to left */
+            align-items: flex-end;
+            /* Align to the bottom */
+        }
+
+        .container {
+            position: relative;
+            width: 200px;
+            /* Box width */
+            height: 200px;
+            /* Box height */
+        }
+
+        /* Box Image (320003) */
+        .box {
+            position: absolute;
+            left: 80px;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+
+        /* Handle Image (320001) - Positioned on top of the box */
+        .handle {
+            position: absolute;
+            width: 100px;
+            /* Adjust the size of the handle */
+            left: 89%;
+            /* Center horizontally */
+            top: -50px;
+            /* Adjust vertical position */
+            transform: translateX(-50%);
+            cursor: pointer;
+            /* Ensures pointer cursor */
+            z-index: 10;
+            /* Ensures handle is clickable */
+        }
+
+        .handle:active {
+            transform: translateX(-50%) translateY(10px);
+            /* Push handle down */
+        }
+
+        /* Pipe Image (320002) - Positioned to the left of the box */
+        .pipe {
+            position: absolute;
+            width: 100px;
+            /* Adjust the size of the pipe */
+            left: 38px;
+            /* Adjust horizontal position */
+            top: 45%;
+            /* Center vertically */
+            transform: translateY(-50%);
+            
+        }
+
+        #balloonArea {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: 50px;
+            transition: transform 1s ease-in-out;
+            cursor: pointer;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameArea">
+        <div class="container">
+            <img src="Graphics/Symbol 320003.png" alt="Box" class="box">
+            <img src="Graphics/Symbol 320001.png" alt="Handle" class="handle" id="airPump">
+            <img src="Graphics/Symbol 320002.png" alt="Pipe" class="pipe">
+        </div>
+        <div id="balloonArea"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
